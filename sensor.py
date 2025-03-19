@@ -25,3 +25,4 @@ while True:
         continue
 
     log_msg("INFO", f"Temperature={data['temp_c']} Humidity={data['humidity']}")
+    sleep(_wait_time)
