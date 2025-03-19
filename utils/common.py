@@ -1,3 +1,4 @@
+import os
 import base64
 
 def is_not_empty (var):
@@ -47,3 +48,26 @@ def b64_encode (var, empty_value = ""):
         return empty_value
 
     return base64.b64encode(var.encode('utf-8')).decode('utf-8')
+
+def override_conf_from_env(conf, key):
+    env_key = "CWCLOUD_DEMO_{}".format(key)
+    if os.environ.get(env_key) is not None:
+        conf[key] = os.environ[env_key]
+    elif not key in conf:
+        conf[key] = "nil"
+
+def override_conf_from_env_array(conf, key):
+    env_key = "CWCLOUD_DEMO_{}".format(key)
+    if os.environ.get(env_key) is not None:
+        if is_empty(os.environ[env_key]):
+            conf[key] = []
+        else:
+            conf[key] = os.environ[env_key].split(",")
+
+def cast_int(var):
+    if is_not_numeric(var):
+        return None
+    elif (isinstance(var, int)):
+        return var
+    else:
+        return int(var)
