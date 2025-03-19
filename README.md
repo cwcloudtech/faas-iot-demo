@@ -6,6 +6,7 @@
 2. Run the following commands:
 
 ```shell
-pip3 install -r requirements.txt
-python3 sensor.py
+python3 -m venv ./vdemo
+./vdemo/bin/pip install -r requirements.txt
+./vdemo/bin/python sensor.py
 ```
