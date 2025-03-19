@@ -43,11 +43,11 @@ def is_numeric (var):
 def is_not_numeric (var):
     return not is_numeric(var)
 
-def b64_encode (var, empty_value = ""):
-    if is_empty(var):
-        return empty_value
+def is_empty_key(vdict, key):
+    return is_empty(vdict) or not key in vdict or is_empty(vdict[key])
 
-    return base64.b64encode(var.encode('utf-8')).decode('utf-8')
+def is_not_empty_key(vdict, key):
+    return not is_empty_key(vdict, key)
 
 def override_conf_from_env(conf, key):
     env_key = "CWCLOUD_DEMO_{}".format(key)

@@ -1,0 +1,2 @@
+requests
+pigpio-dht==0.3.6
