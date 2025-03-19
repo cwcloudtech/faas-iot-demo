@@ -7,6 +7,7 @@
 
 ```shell
 python3 -m venv ./vdemo
-./vdemo/bin/pip install -r requirements.txt --install-option="--force-pi"
+./vdemo/bin/pip install --upgrade pip setuptools wheel
+./vdemo/bin/pip install -r requirements-sensor.txt --install-option="--force-pi"
 ./vdemo/bin/python sensor.py
 ```
