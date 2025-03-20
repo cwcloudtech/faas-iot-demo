@@ -1,6 +1,6 @@
 {
   "wait_time": 60,
-  "pin": 4,
+  "pin": 17,
   "log_level": "info",
   "log_format": "json",
   "cwcloud_key": "changeit"
