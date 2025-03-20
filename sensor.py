@@ -14,7 +14,10 @@ override_conf_from_env(conf, 'pin')
 override_conf_from_env(conf, 'wait_time')
 
 _wait_time = cast_int(conf['wait_time'])
-_sensor = adafruit_dht.DHT22(board.D4)
+_pin = conf['pin']
+gpio_pin = getattr(board, f"D{_pin}")
+
+_sensor = adafruit_dht.DHT22(gpio_pin)
 
 while True:
     temp = _sensor.temperature
