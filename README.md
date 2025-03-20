@@ -1,11 +1,8 @@
 # FaaS IoT Demo cwcloud
 
-## Installation of the pi
+## Wiring of the Sensor PI
 
-```shell
-sudo apt update -y
-sudo apt install -y pigpiod
-``` 
+![gpio](./img/gpio.png)
 
 ## On the sensor pi
 
