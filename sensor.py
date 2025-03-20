@@ -17,7 +17,7 @@ _wait_time = cast_int(conf['wait_time'])
 _pin = conf['pin']
 gpio_pin = getattr(board, f"D{_pin}")
 
-_sensor = adafruit_dht.DHT22(gpio_pin)
+_sensor = adafruit_dht.DHT22(gpio_pin, use_pulseio=False)
 
 while True:
     temp = _sensor.temperature
