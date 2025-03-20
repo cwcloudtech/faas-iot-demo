@@ -14,13 +14,11 @@ override_conf_from_env(conf, 'pin')
 override_conf_from_env(conf, 'wait_time')
 
 _wait_time = cast_int(conf['wait_time'])
-_data_pin = cast_int(conf['pin'])
-
-sensor = adafruit_dht.DHT22(_data_pin)
+_sensor = adafruit_dht.DHT22(board.D4)
 
 while True:
-    temp = sensor.temperature
-    humidity = sensor.humidity
+    temp = _sensor.temperature
+    humidity = _sensor.humidity
 
     log_msg("INFO", f"Temperature={temp} Humidity={humidity}")
     sleep(_wait_time)
