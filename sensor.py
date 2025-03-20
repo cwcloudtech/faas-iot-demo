@@ -1,5 +1,3 @@
-import json
-
 from time import sleep
 from pigpio_dht import DHT22
 
