@@ -6,9 +6,15 @@ import sys
 from datetime import datetime
 
 from utils.common import is_enabled
+from utils.config import get_config, override_conf_from_env
 
-LOG_LEVEL = os.environ['LOG_LEVEL']
-LOG_FORMAT = os.getenv('LOG_FORMAT')
+conf = get_config("sensor")
+
+override_conf_from_env(conf, 'log_level')
+override_conf_from_env(conf, 'log_format')
+
+LOG_LEVEL = conf['log_level']
+LOG_FORMAT = conf['log_format']
 
 def is_level_partof(level, levels):
     return any(l == "{}".format(level).lower() for l in levels)

@@ -49,21 +49,6 @@ def is_empty_key(vdict, key):
 def is_not_empty_key(vdict, key):
     return not is_empty_key(vdict, key)
 
-def override_conf_from_env(conf, key):
-    env_key = "CWCLOUD_DEMO_{}".format(key)
-    if os.environ.get(env_key) is not None:
-        conf[key] = os.environ[env_key]
-    elif not key in conf:
-        conf[key] = "nil"
-
-def override_conf_from_env_array(conf, key):
-    env_key = "CWCLOUD_DEMO_{}".format(key)
-    if os.environ.get(env_key) is not None:
-        if is_empty(os.environ[env_key]):
-            conf[key] = []
-        else:
-            conf[key] = os.environ[env_key].split(",")
-
 def cast_int(var):
     if is_not_numeric(var):
         return None

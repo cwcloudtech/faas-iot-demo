@@ -3,11 +3,11 @@ import json
 from time import sleep
 from pigpio_dht import DHT22
 
-from utils.common import is_empty_key, is_not_empty, override_conf_from_env, cast_int
+from utils.common import is_empty_key, cast_int
+from utils.config import get_config, override_conf_from_env
 from utils.logger import log_msg
 
-with open('sensor.json') as json_file:
-    conf = json.load(json_file)
+conf = get_config("sensor")
 
 override_conf_from_env(conf, 'log_level')
 override_conf_from_env(conf, 'pin')
