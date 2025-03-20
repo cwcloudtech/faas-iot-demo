@@ -16,6 +16,5 @@ sudo apt install -y pigpiod
 python3 -m venv ./vdemo
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r requirements.txt
-sudo pigpiod
 ./vdemo/bin/python sensor.py
 ```
