@@ -1,5 +1,12 @@
 # FaaS IoT Demo cwcloud
 
+## Installation of the pi
+
+```shell
+sudo apt update -y
+sudo apt install -y pigpiod
+``` 
+
 ## On the sensor pi
 
 1. Change the `changeit` value in the [sensor.json](./sensor.json) file
@@ -9,5 +16,6 @@
 python3 -m venv ./vdemo
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r requirements.txt
+sudo pigpiod
 ./vdemo/bin/python sensor.py
 ```
