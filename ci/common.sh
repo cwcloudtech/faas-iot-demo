@@ -13,7 +13,7 @@ create_venv() {
 }
 
 kill_process() {
-    ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("kill -9 "$2" ; kill -9 "$3)}'
+    ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("kill -9 "$2)}'
 }
 
 start_process() {
