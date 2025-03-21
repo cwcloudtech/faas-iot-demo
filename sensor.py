@@ -5,6 +5,7 @@ from time import sleep
 
 from utils.common import cast_int
 from utils.config import get_config, override_conf_from_env
+from utils.faas import call_serverless_function
 from utils.logger import log_msg
 
 conf = get_config("sensor")
@@ -24,4 +25,5 @@ while True:
     humidity = _sensor.humidity
 
     log_msg("INFO", f"Temperature={temp} Humidity={humidity}")
+    call_serverless_function(temp, humidity)
     sleep(_wait_time)

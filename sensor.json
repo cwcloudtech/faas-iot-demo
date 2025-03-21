@@ -3,5 +3,7 @@
   "pin": 17,
   "log_level": "info",
   "log_format": "json",
-  "cwcloud_key": "changeit"
+  "api_url": "https://api.cwcloud.tech",
+  "api_key": "changeit",
+  "function_id": "changeit"
 }
