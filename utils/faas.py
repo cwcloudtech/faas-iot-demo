@@ -46,8 +46,6 @@ def call_serverless_function(temperature, humidity):
         "X-Auth-Token" : conf['api_key'] 
     }
 
-    log_msg("INFO", f"headers=${headers}")
-
     body = {
         "content": {
             "function_id": conf['function_id'],
