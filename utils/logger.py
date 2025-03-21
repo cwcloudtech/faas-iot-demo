@@ -8,7 +8,7 @@ from datetime import datetime
 from utils.common import is_enabled
 from utils.config import get_config, override_conf_from_env
 
-conf = get_config("sensor")
+conf = get_config("common")
 
 override_conf_from_env(conf, 'log_level')
 override_conf_from_env(conf, 'log_format')

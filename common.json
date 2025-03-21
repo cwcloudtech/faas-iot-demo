@@ -1,0 +1,8 @@
+{
+    "log_level": "info",
+    "log_format": "json",
+    "api_url": "https://api.cwcloud.tech",
+    "api_key": "changeit",
+    "function_id": "changeit"
+}
+  

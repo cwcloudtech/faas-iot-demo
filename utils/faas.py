@@ -5,7 +5,7 @@ import requests
 from utils.config import get_config, override_conf_from_env
 from utils.logger import log_msg
 
-conf = get_config("sensor")
+conf = get_config("common")
 
 override_conf_from_env(conf, 'api_url')
 override_conf_from_env(conf, 'api_key')
