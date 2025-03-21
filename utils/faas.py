@@ -48,7 +48,7 @@ def call_serverless_function(temperature, humidity):
 
     body = {
         "content": {
-            "function_id": '0495aa2a-ecc7-45ab-819b-0871eba02de7', 
+            "function_id": conf['function_id'],
             "args": args
         }
     }
