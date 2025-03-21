@@ -21,8 +21,12 @@ gpio_pin = getattr(board, f"D{_pin}")
 _sensor = adafruit_dht.DHT22(gpio_pin, use_pulseio=False)
 
 while True:
-    temp = _sensor.temperature
-    humidity = _sensor.humidity
+    try:
+        temp = _sensor.temperature
+        humidity = _sensor.humidity
+    except RuntimeError as e:
+        log_msg("ERROR", f"Unexpected error type={type(e)}, error={e}")
+        continue
 
     log_msg("INFO", f"Temperature={temp} Humidity={humidity}")
     call_serverless_function(temp, humidity)
