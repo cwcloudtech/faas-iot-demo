@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-source common.sh
+source ./ci/common.sh
 
 kill_sensor() {
-    ps -ef|awk '($0 ~ "sensor.py" && $0 ~ "python" && $0 !~ "awk"){system ("kill -9 "$2" ; kill -9 "$3)}'
+    ps -ef|awk '($0 ~ "sensor.py" && $0 ~ "python" && $0 !~ "awk"){system ("sudo kill -9 "$2" ; sudo kill -9 "$3)}'
 }
 
 start_sensor() {
