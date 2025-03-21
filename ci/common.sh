@@ -17,5 +17,7 @@ kill_process() {
 
 start_process() {
     $VENV_PATH/bin/pip install -r "${1}.requirements"
-    sudo $VENV_PATH/bin/python "${1}.py"
+    sudo nohup $VENV_PATH/bin/python "${1}.py" > "${1}.log" 2>&1 &
+    sleep 2
+    cat "${1}.log"
 }
