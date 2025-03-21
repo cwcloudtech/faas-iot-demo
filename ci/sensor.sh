@@ -4,5 +4,5 @@ source ./ci/common.sh
 
 kill_process "sensor"
 create_venv
-start_process "sensor" & disown $!
+start_process "sensor"
 exit 0
