@@ -17,7 +17,6 @@ kill_sensor() {
 start_sensor() {
     $venv_path/bin/pip install --upgrade pip setuptools wheel
     $venv_path/vdemo/bin/pip install -r sensor.requirements
-    sudo echo "${CWCLOUD_DEMO_api_key}" > /root/api_key.txt
     sudo ./vdemo/bin/python sensor.py & disown
 }
 
