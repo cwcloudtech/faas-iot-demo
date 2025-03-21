@@ -9,5 +9,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r sensor.requirements
+sudo echo "${CWCLOUD_DEMO_api_key}" > /root/api_key.txt
 sudo ./vdemo/bin/python sensor.py & disown
 exit 0
