@@ -13,13 +13,13 @@ create_venv() {
 }
 
 kill_process() {
-    ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("sudo kill -9 "$2" ; sudo kill -9 "$3)}'
+    ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("kill -9 "$2" ; kill -9 "$3)}'
 }
 
 start_process() {
     $VENV_PATH/bin/activate
     $VENV_PATH/bin/pip install -r "${1}.requirements"
-    sudo nohup $VENV_PATH/bin/python "${1}.py" > "${1}.log" 2>&1 &
+    nohup $VENV_PATH/bin/python "${1}.py" > "${1}.log" 2>&1 &
     sleep 2
     cat "${1}.log"
 }

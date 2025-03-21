@@ -1,7 +1,7 @@
 import os
 import json
 
-from utils.common import is_empty, is_not_empty
+from utils.common import is_empty, is_empty_key, is_not_empty
 
 _prefix = "CWCLOUD_DEMO"
 
@@ -22,5 +22,5 @@ def override_conf_from_env(conf, key):
     env_key = f"{_prefix}_{key}"
     if is_not_empty(os.environ.get(env_key)):
         conf[key] = os.environ[env_key]
-    elif not key in conf:
+    elif is_empty_key(conf, key):
         conf[key] = "nil"
