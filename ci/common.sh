@@ -10,3 +10,12 @@ create_venv() {
         $VENV_PATH/bin/pip install --upgrade pip setuptools wheel
     fi
 }
+
+kill_process() {
+    ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("sudo kill -9 "$2" ; sudo kill -9 "$3)}'
+}
+
+start_process() {
+    $VENV_PATH/bin/pip install -r "${1}.requirements"
+    sudo $VENV_PATH/bin/python "${1}.py"
+}
