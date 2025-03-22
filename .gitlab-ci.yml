@@ -12,10 +12,19 @@ mirror:
     - mirror
 
 sensor:
-  stage: publish
+  stage: start
   script:
     - setsid ./ci/sensor.sh
   only:
     - /^(main.*)$/
   tags:
     - cwcloud-demo-sensor
+
+screen:
+  stage: start
+  script:
+    - setsid ./ci/screen.sh
+  only:
+    - /^(main.*)$/
+  tags:
+    - cwcloud-demo-screen

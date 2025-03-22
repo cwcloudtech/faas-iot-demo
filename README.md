@@ -15,3 +15,14 @@ python3 -m venv ./vdemo
 ./vdemo/bin/pip install -r sensor.requirements
 ./vdemo/bin/python sensor.py
 ```
+
+## On the screen pi
+
+```shell
+sudo apt update -y
+sudo apt install -y python3-tk
+python3 -m venv ./vdemo
+./vdemo/bin/pip install --upgrade pip setuptools wheel
+./vdemo/bin/pip install -r screen.requirements
+./vdemo/bin/python screen.py
+```
