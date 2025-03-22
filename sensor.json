@@ -1,5 +1,5 @@
 {
-  "wait_time": 1800,
+  "wait_time": 3600,
   "pin": 17,
   "use_pulseio": false
 }
