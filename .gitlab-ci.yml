@@ -20,11 +20,11 @@ sensor:
   tags:
     - cwcloud-demo-sensor
 
-screen:
-  stage: start
-  script:
-    - setsid ./ci/screen.sh
-  only:
-    - /^(main.*)$/
-  tags:
-    - cwcloud-demo-screen
+#screen:
+#  stage: start
+#  script:
+#    - setsid ./ci/screen.sh
+#  only:
+#    - /^(main.*)$/
+#  tags:
+#    - cwcloud-demo-screen
