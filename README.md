@@ -42,7 +42,7 @@ python3 -m venv ./vdemo
 ### First install
 
 ```shell
-sudo apt install -y python3-tk
+sudo apt install -y python3-tk x11-apps
 ```
 
 ### Configure the display
