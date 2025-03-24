@@ -8,6 +8,7 @@ create_venv() {
         echo "export PYTHONDONTWRITEBYTECODE=1" >> $VENV_PATH/bin/activate
         echo "export TK_SILENCE_DEPRECATION=1" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_api_key=${CWCLOUD_DEMO_api_key}" >> $VENV_PATH/bin/activate
+        chmod +x $VENV_PATH/bin/activate
         $VENV_PATH/bin/activate
         $VENV_PATH/bin/pip install --upgrade pip setuptools wheel
     fi
