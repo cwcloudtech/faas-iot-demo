@@ -45,23 +45,6 @@ python3 -m venv ./vdemo
 sudo apt install -y python3-tk x11-apps
 ```
 
-### Configure the display
-
-Enable the embedded display:
-
-```shell
-git clone https://github.com/goodtft/LCD-show.git
-chmod -R 755 LCD-show
-cd LCD-show/
-sudo ./LCD35-show
-```
-
-Disable and go back to hdmi:
-
-```shell
-sudo ./LCD-hdmi
-```
-
 ### Run and update the code
 
 ```shell
