@@ -7,7 +7,7 @@ create_venv() {
         python3 -m venv $VENV_PATH
         echo "export PYTHONDONTWRITEBYTECODE=1" >> $VENV_PATH/bin/activate
         echo "export TK_SILENCE_DEPRECATION=1" >> $VENV_PATH/bin/activate
-        echo "export DISPLAY=\":0.0\""
+        echo "export DISPLAY=:0.0"
         echo "export CWCLOUD_DEMO_api_key=\"${CWCLOUD_DEMO_api_key}\"" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_mqtt_broker_url=\"${CWCLOUD_DEMO_mqtt_broker_url}\"" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_mqtt_username=\"${CWCLOUD_DEMO_mqtt_username}\"" >> $VENV_PATH/bin/activate
