@@ -9,8 +9,8 @@ create_venv() {
         echo "export TK_SILENCE_DEPRECATION=1" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_api_key=${CWCLOUD_DEMO_api_key}" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_mqtt_broker_url=${CWCLOUD_DEMO_mqtt_broker_url}" >> $VENV_PATH/bin/activate
-        echo "export CWCLOUD_DEMO_mqtt_broker_username=${CWCLOUD_DEMO_mqtt_broker_username}" >> $VENV_PATH/bin/activate
-        echo "export CWCLOUD_DEMO_mqtt_broker_password=${CWCLOUD_DEMO_mqtt_broker_password}" >> $VENV_PATH/bin/activate
+        echo "export CWCLOUD_DEMO_mqtt_username=${CWCLOUD_DEMO_mqtt_username}" >> $VENV_PATH/bin/activate
+        echo "export CWCLOUD_DEMO_mqtt_password=${CWCLOUD_DEMO_mqtt_password}" >> $VENV_PATH/bin/activate
         source $VENV_PATH/bin/activate
         $VENV_PATH/bin/pip install --upgrade pip setuptools wheel
     fi
@@ -21,7 +21,7 @@ kill_process() {
 }
 
 start_process() {
-    $VENV_PATH/bin/activate
+    source $VENV_PATH/bin/activate
     $VENV_PATH/bin/pip install -r "${1}.requirements"
     $VENV_PATH/bin/python "${1}.py" &> "${1}.log" & disown -h
     sleep 2
