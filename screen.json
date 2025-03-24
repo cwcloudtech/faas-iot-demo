@@ -1,0 +1,8 @@
+{
+    "mqtt_broker_url": "changeit",
+    "mqtt_port": 8883,
+    "mqtt_broker_username": "changeit",
+    "mqtt_broker_password": "changeit",
+    "mqtt_subscription": "faas/#",
+    "mqtt_topic": "demo"
+}
