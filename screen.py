@@ -10,6 +10,9 @@ if is_empty(os.environ.get('DISPLAY')):
 
 window = tk.Tk()
 window.title("Hello")
+window.attributes("-fullscreen", True)
+window.bind("<Escape>", lambda _: window.attributes("-fullscreen", False))
+
 label = tk.Label(window, text="Hello, Raspberry Pi!")
 label.pack(padx=20, pady=20)
 window.mainloop()
