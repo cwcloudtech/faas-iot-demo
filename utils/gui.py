@@ -13,11 +13,13 @@ def display(title, message):
     try:
         window = tk.Tk()
         window.title(title)
-        window.attributes("-fullscreen", True)
-        window.bind("<Escape>", lambda _: window.attributes("-fullscreen", False))
 
         label = tk.Label(window, text=message, font=("Arial", 20))
         label.place(relx=0.5, rely=0.5, anchor='center')
+
+        quit_button = tk.Button(window, text="Quit", font=("Arial", 14), command=window.destroy)
+        quit_button.place(relx=0.5, rely=0.6, anchor='center')
+
         window.mainloop()
     except tk.TclError as te:
         log_msg("WARN", f"[gui] unexpected error: title={title}, message={message}, error={te}")
