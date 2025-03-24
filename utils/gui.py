@@ -23,4 +23,3 @@ def display(title, message):
         window.mainloop()
     except tk.TclError as te:
         log_msg("WARN", f"[gui] unexpected error: title={title}, message={message}, error={te}")
- 
