@@ -25,6 +25,10 @@ gitlab-runner register
 
 ![gpio](./img/gpio.png)
 
+* `+` plugged in pin 1 (`3.3V`)
+* `out` plugged in pin 11 (`#17`)
+* `-` plugged in pin 9 (`GND`)
+
 ### Run and update the code
 
 1. Change the `changeit` value in the [common.json](./common.json) file
