@@ -27,6 +27,14 @@ python3 -m venv ./vdemo
 
 ## On the screen pi
 
+First install:
+
+```shell
+sudo apt install qt5-qmake qtbase5-dev
+```
+
+Then:
+
 ```shell
 python3 -m venv ./vdemo
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
