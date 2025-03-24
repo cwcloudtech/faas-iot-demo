@@ -1,5 +1,5 @@
 {
-    "log_level": "info",
+    "log_level": "debug",
     "log_format": "json",
     "api_url": "https://api.cwcloud.tech",
     "api_key": "changeit",

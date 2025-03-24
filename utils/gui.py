@@ -8,7 +8,7 @@ from utils.logger import log_msg
 def display(title, message):
     if is_empty(os.environ.get('DISPLAY')):
         log_msg("DEBUG", "[screen] no display found, using: 0.0")
-        os.environ['DISPLAY'] = ':0.0'
+        os.environ.__setitem__('DISPLAY', ':0.0')
 
     window = tk.Tk()
     window.title(title)
