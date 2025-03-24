@@ -16,8 +16,8 @@ def display(title, message):
         window.attributes("-fullscreen", True)
         window.bind("<Escape>", lambda _: window.attributes("-fullscreen", False))
 
-        label = tk.Label(window, text=message)
-        label.pack(padx=20, pady=20)
+        label = tk.Label(window, text=message, font=("Arial", 20))
+        label.place(relx=0.5, rely=0.5, anchor='center')
         window.mainloop()
     except tk.TclError as te:
         log_msg("WARN", f"[gui] unexpected error: title={title}, message={message}, error={te}")
