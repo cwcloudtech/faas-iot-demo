@@ -15,9 +15,9 @@ def display(title, message):
         window.title(title)
 
         label = tk.Label(window, text=message, font=("Arial", 20))
-        label.place(relx=0.5, rely=0.5, anchor='center')
+        label.place(relx=0.5, rely=0.4, anchor='center')
 
-        quit_button = tk.Button(window, text="Quit", font=("Arial", 12), command=window.destroy)
+        quit_button = tk.Button(window, text="OK", font=("Arial", 12), command=window.destroy)
         quit_button.place(relx=0.5, rely=0.8, anchor='center')
 
         window.mainloop()
