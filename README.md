@@ -22,7 +22,7 @@ python3 -m venv ./vdemo
 
 ```shell
 sudo apt update -y
-sudo apt install -y python3-tk fonts-noto-color-emoji
+sudo apt install -y python3-pyqt5 fonts-noto-color-emoji
 ```
 
 ### Update and run the code
