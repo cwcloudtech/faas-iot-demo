@@ -18,9 +18,16 @@ python3 -m venv ./vdemo
 
 ## On the screen pi
 
+### Package to pre-install
+
 ```shell
 sudo apt update -y
-sudo apt install -y python3-tk
+sudo apt install -y python3-tk fonts-noto-color-emoji
+```
+
+### Update and run the code
+
+```shell
 python3 -m venv ./vdemo
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r screen.requirements
