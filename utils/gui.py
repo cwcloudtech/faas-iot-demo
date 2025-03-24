@@ -22,15 +22,13 @@ def display(title, message):
     label = QLabel(message)
     label.setAlignment(Qt.AlignCenter)
 
-    # Set a font that supports emojis (requires `fonts-noto-color-emoji` installed)
-    font = QFont("Noto Color Emoji", 32)  # Increase size if needed
+    font = QFont("Noto Color Emoji", 32)
     label.setFont(font)
 
     layout = QVBoxLayout()
     layout.addWidget(label)
     window.setLayout(layout)
 
-    # Press Escape to exit fullscreen
     def exit_fullscreen(event):
         if event.key() == Qt.Key_Escape:
             window.showNormal()

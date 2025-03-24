@@ -11,8 +11,7 @@ create_venv() {
         echo "export CWCLOUD_DEMO_mqtt_broker_url=${CWCLOUD_DEMO_mqtt_broker_url}" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_mqtt_broker_username=${CWCLOUD_DEMO_mqtt_broker_username}" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_mqtt_broker_password=${CWCLOUD_DEMO_mqtt_broker_password}" >> $VENV_PATH/bin/activate
-        chmod +x $VENV_PATH/bin/activate
-        $VENV_PATH/bin/activate
+        source $VENV_PATH/bin/activate
         $VENV_PATH/bin/pip install --upgrade pip setuptools wheel
     fi
 }

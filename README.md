@@ -4,6 +4,15 @@
 
 ![gpio](./img/gpio.png)
 
+## Requirements
+
+On both rapberrypi:
+
+```shell
+sudo apt update -y
+sudo apt install -y build-essential fonts-noto-color-emoji
+```
+
 ## On the sensor pi
 
 1. Change the `changeit` value in the [common.json](./common.json) file
@@ -17,15 +26,6 @@ python3 -m venv ./vdemo
 ```
 
 ## On the screen pi
-
-### Package to pre-install
-
-```shell
-sudo apt update -y
-sudo apt install -y python3-pyqt5 fonts-noto-color-emoji
-```
-
-### Update and run the code
 
 ```shell
 python3 -m venv ./vdemo
