@@ -42,7 +42,7 @@ python3 -m venv ./vdemo
 ### First install
 
 ```shell
-sudo apt install -y qt5-qmake qtbase5-dev python3-pyqt5
+sudo apt install -y python3-tk
 ```
 
 ### Configure the display

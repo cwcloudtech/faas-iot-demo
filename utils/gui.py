@@ -1,9 +1,6 @@
 import os
-import sys
 
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
-from PyQt5.QtGui import QFont
-from PyQt5.QtCore import Qt
+import tkinter as tk
 
 from utils.common import is_empty
 from utils.logger import log_msg
@@ -13,26 +10,11 @@ def display(title, message):
         log_msg("DEBUG", "[screen] no display found, using: 0.0")
         os.environ['DISPLAY'] = ':0.0'
 
-    app = QApplication(sys.argv)
+    window = tk.Tk()
+    window.title(title)
+    window.attributes("-fullscreen", True)
+    window.bind("<Escape>", lambda _: window.attributes("-fullscreen", False))
 
-    window = QWidget()
-    window.setWindowTitle(title)
-    window.showFullScreen()
-
-    label = QLabel(message)
-    label.setAlignment(Qt.AlignCenter)
-
-    font = QFont("Noto Color Emoji", 32)
-    label.setFont(font)
-
-    layout = QVBoxLayout()
-    layout.addWidget(label)
-    window.setLayout(layout)
-
-    def exit_fullscreen(event):
-        if event.key() == Qt.Key_Escape:
-            window.showNormal()
-
-    window.keyPressEvent = exit_fullscreen
-
-    sys.exit(app.exec_())
+    label = tk.Label(window, text=message)
+    label.pack(padx=20, pady=20)
+    window.mainloop()
