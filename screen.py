@@ -2,7 +2,7 @@ import paho.mqtt.client as paho
 from paho import mqtt
 
 from utils.certs import create_cert_locally
-from utils.common import is_empty, is_not_empty_key, is_true
+from utils.common import is_empty, is_true
 from utils.config import get_config, override_conf_from_env
 from utils.gui import display
 from utils.logger import log_msg
