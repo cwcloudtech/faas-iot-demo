@@ -18,9 +18,9 @@ def get_config(name):
 
     return {**common, **conf}
 
-def override_conf_from_env(conf, key):
+def override_conf_from_env(conf, key, default_value = None):
     env_key = f"{_prefix}_{key}"
     if is_not_empty(os.environ.get(env_key)):
         conf[key] = os.environ[env_key]
     elif is_empty_key(conf, key):
-        conf[key] = "nil"
+        conf[key] = default_value

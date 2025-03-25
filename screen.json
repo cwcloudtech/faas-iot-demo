@@ -1,8 +1,11 @@
 {
-    "mqtt_broker_url": "changeit",
-    "mqtt_port": 8883,
-    "mqtt_broker_username": "changeit",
-    "mqtt_broker_password": "changeit",
-    "mqtt_subscription": "faas/#",
-    "mqtt_topic": "demo"
+    "callback_type": "mqtt",
+    "callback_url": "changeit",
+    "callback_port": 8883,
+    "callback_username": "changeit",
+    "callback_password": "changeit",
+    "callback_subscription": "faas/#",
+    "callback_topic": "faas/demo",
+    "callback_qos": 0,
+    "callback_certificates_required": false
 }
