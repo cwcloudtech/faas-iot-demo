@@ -4,5 +4,5 @@ source ./ci/common.sh
 
 kill_process "screen"
 create_venv
-start_process "screen"
+sudo -u cwcloud start_process "screen"
 exit 0
