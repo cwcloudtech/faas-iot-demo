@@ -7,19 +7,6 @@ from utils.config import get_config, override_conf_from_env
 from utils.gui import display
 from utils.logger import log_msg
 
-def on_connect(client, userdata, flags, rc, properties=None):
-    log_msg("DEBUG", "[screen][on_connect] CONNACK received with code %s." % rc)
-
-def on_publish(client, userdata, mid, properties=None):
-    log_msg("DEBUG", "[screen][on_publish] mid: {}".format(str(mid)))
-
-def on_subscribe(client, userdata, mid, granted_qos, properties=None):
-    log_msg("DEBUG", "[screen][on_subscribe] Subscribed: {} {}".format(str(mid), str(granted_qos)))
-
-def on_message(client, userdata, msg):
-    log_msg("DEBUG", "[screen][on_message] topic: {} qos: {} payload: {}".format(msg.topic, str(msg.qos), str(msg.payload)))
-    display("Hello", "🧪")
-
 conf = get_config("screen")
 
 conf_keys = [
@@ -42,6 +29,20 @@ conf_keys = [
 
 for key in conf_keys:
     override_conf_from_env(conf, key)
+
+def on_connect(client, userdata, flags, rc, properties=None):
+    log_msg("DEBUG", "[screen][on_connect] CONNACK received with code %s." % rc)
+    client.subscribe(conf['callback_subscription'], qos=int(conf['callback_qos']))
+
+def on_publish(client, userdata, mid, properties=None):
+    log_msg("DEBUG", "[screen][on_publish] mid: {}".format(str(mid)))
+
+def on_subscribe(client, userdata, mid, granted_qos, properties=None):
+    log_msg("DEBUG", "[screen][on_subscribe] Subscribed: {} {}".format(str(mid), str(granted_qos)))
+
+def on_message(client, userdata, msg):
+    log_msg("DEBUG", "[screen][on_message] topic: {} qos: {} payload: {}".format(msg.topic, str(msg.qos), str(msg.payload)))
+    display("Hello", msg.payload)
 
 client = None
 if conf['callback_type'] == "mqtt":
@@ -76,5 +77,4 @@ else:
 client.username_pw_set(conf['callback_username'], conf['callback_password'])
 client.connect(conf['callback_url'], conf['callback_port'])
 
-client.loop_start()
-client.subscribe(conf['callback_subscription'], qos=int(conf['callback_qos']))
+client.loop_forever()
