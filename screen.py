@@ -18,7 +18,7 @@ def on_subscribe(client, userdata, mid, granted_qos, properties=None):
 
 def on_message(client, userdata, msg):
     log_msg("DEBUG", "[screen][on_message] topic: {} qos: {} payload: {}".format(msg.topic, str(msg.qos), str(msg.payload)))
-    display("Hello", "🧪")
+    display("Hello", msg.payload)
 
 conf = get_config("screen")
 
