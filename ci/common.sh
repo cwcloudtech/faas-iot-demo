@@ -11,7 +11,7 @@ create_venv() {
         echo "export CWCLOUD_DEMO_api_key=\"${CWCLOUD_DEMO_api_key}\"" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_callback_url=\"${CWCLOUD_DEMO_callback_url}\"" >> $VENV_PATH/bin/activate
         echo "export CWCLOUD_DEMO_callback_username=\"${CWCLOUD_DEMO_callback_username}\"" >> $VENV_PATH/bin/activate
-        echo "export CWCLOUD_DEMO_callback_password=\"${CWCLOUD_DEMO_callback_password}\"" >> $VENV_PATH/bin/activate
+        echo "export CWCLOUD_DEMO_callback_password='${CWCLOUD_DEMO_callback_password}'" >> $VENV_PATH/bin/activate
         source $VENV_PATH/bin/activate
         $VENV_PATH/bin/pip install --upgrade pip setuptools wheel
     fi
