@@ -66,6 +66,9 @@ source ./vdemo/bin/activate
 
 ### Run the screen code
 
+1. Change the values containing `changeit` value in the configurations json files: [common.json](./common.json) and [screen.json](./screen.json)
+2. Run the following commands:
+
 ```shell
 python3 -m venv ./vdemo
 source ./vdemo/bin/activate
