@@ -4,7 +4,7 @@ import paho.mqtt.client as paho
 from paho import mqtt
 
 from utils.certs import create_cert_locally
-from utils.common import is_empty, is_true
+from utils.common import is_empty, is_empty_key, is_true
 from utils.config import get_config, override_conf_from_env
 from utils.gui import display
 from utils.logger import log_msg
@@ -12,6 +12,7 @@ from utils.logger import log_msg
 conf = get_config("screen")
 
 conf_keys = [
+    'gui_close_after',
     'callback_type',
     'callback_url',
     'callback_client_id',
@@ -45,8 +46,12 @@ def on_subscribe(client, userdata, mid, granted_qos, properties=None):
 def on_message(client, userdata, msg):
     log_msg("DEBUG", "[screen][on_message] topic: {} qos: {} payload: {}".format(msg.topic, str(msg.qos), str(msg.payload)))
     payload = json.loads(msg.payload.decode("UTF-8"))
+    if is_empty_key(payload, 'content'):
+        log_msg("ERROR", f"[screen][on_message] invalid payload: {payload}")
+        return
+
     if payload['content']['state'] == "complete":
-        display("I feel", payload['content']['result'])
+        display(conf, "I feel", payload['content']['result'])
 
 client = None
 if conf['callback_type'] == "mqtt":

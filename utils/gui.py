@@ -5,7 +5,7 @@ import tkinter as tk
 from utils.common import is_empty
 from utils.logger import log_msg
 
-def display(title, message):
+def display(conf, title, message):
     if is_empty(os.environ.get('DISPLAY')):
         log_msg("DEBUG", "[gui] no display found, using: :0.0")
         os.environ.__setitem__('DISPLAY', ':0.0')
@@ -13,6 +13,7 @@ def display(title, message):
     try:
         window = tk.Tk()
         window.title(title)
+        window.after(int(conf['gui_close_after']), window.destroy)
 
         label = tk.Label(window, text=message, font=("Arial", 20))
         label.place(relx=0.5, rely=0.4, anchor='center')

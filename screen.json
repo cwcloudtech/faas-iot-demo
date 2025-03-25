@@ -1,4 +1,5 @@
 {
+    "gui_close_after": 5000,
     "callback_type": "mqtt",
     "callback_url": "CWCLOUD_DEMO_callback_url_changeit",
     "callback_port": 8883,
