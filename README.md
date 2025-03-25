@@ -36,6 +36,7 @@ gitlab-runner register
 
 ```shell
 python3 -m venv ./vdemo
+source ./vdemo/bin/activate
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r sensor.requirements
 ./vdemo/bin/python sensor.py
@@ -53,6 +54,7 @@ sudo apt install -y python3-tk x11-apps
 
 ```shell
 python3 -m venv ./vdemo
+source ./vdemo/bin/activate
 ./vdemo/bin/pip install --upgrade pip setuptools wheel
 ./vdemo/bin/pip install -r screen.requirements
 ./vdemo/bin/python screen.py
