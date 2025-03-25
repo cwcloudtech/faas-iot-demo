@@ -35,6 +35,7 @@ create_venv() {
 
 kill_process() {
     ps -ef|awk '($0 ~ "'"${1}"'.py" && $0 ~ "python" && $0 !~ "awk"){system ("kill -9 "$2)}'
+    rm -rf "${1}.log"
 }
 
 start_process() {
