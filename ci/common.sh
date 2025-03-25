@@ -18,7 +18,7 @@ create_venv() {
         )
 
         declare -a confs
-        confs=("common" "sensor" "screen")
+        confs=("common" "sensor" "screen" "demo-faas-iot")
 
         for var in ${vars[@]}; do
             val="$(printenv $var)"
