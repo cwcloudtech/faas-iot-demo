@@ -1,5 +1,17 @@
 # FaaS IoT Demo cwcloud
 
+This demo is illustrating how to use the the CWCloud FaaS engine with the CW AI api together with a humidity and temperature sensor to get feeling emojis using MQTT.
+
+The function is supposed to send the humidity and temperature to a serverless function which will send this in a prompt to a LLM and tell the LLM to answer with emojis to explain how it feels.
+
+This is the flow:
+
+![flow](./img/flow.png)
+
+Relevant tutorials:
+* [using CW AI with the FaaS engine](https://www.cwcloud.tech/docs/tutorials/cwai#using-the-faas-engine)
+* [Adding MQTT callbacks in your serverless function](https://www.cwcloud.tech/docs/tutorials/faas/how_to_create_mqtt_hive_mq#step-2-add-an-mqtt-callback-and-create-your-function)
+
 ## Requirements
 
 ### Hardware
@@ -15,6 +27,8 @@ And a DHT22 temperature and humidity sensor wired as described below:
 * `+` plugged in pin 1 (`3.3V`)
 * `out` plugged in pin 11 (`#17`)
 * `-` plugged in pin 9 (`GND`)
+
+Note: this wiring is working also when you're using an ArgoOne case which is also using some other pins for its fan.
 
 ### Software
 
