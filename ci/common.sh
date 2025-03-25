@@ -21,7 +21,6 @@ create_venv() {
         confs=("common" "sensor" "screen")
 
         for var in ${vars[@]}; do
-            sed -i 
             val="$(printenv $var)"
             for conf in ${confs[@]}; do
                 sed -i "s/${var}_changeit/${val}/g" "${conf}.json"
