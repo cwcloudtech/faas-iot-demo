@@ -2,26 +2,13 @@
 
 ## Requirements
 
-On both rapberrypi:
+### Hardware
 
-```shell
-sudo apt update -y
-sudo apt dist-upgrade -y
-sudo apt autoremove -y
-sudo apt install -y git build-essential fonts-noto-color-emoji
-```
+You need a RaspberryPi 4 model B with 4GB ram or more:
 
-Install also gitlab runner:
+![rpi4](./img/rpi4.png)
 
-```shell
-curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
-sudo apt -y install gitlab-runner
-gitlab-runner register
-```
-
-## On the sensor pi
-
-### Wiring of the Sensor PI
+And a DHT22 temperature and humidity sensor wired as described below:
 
 ![gpio](./img/gpio.png)
 
@@ -29,9 +16,30 @@ gitlab-runner register
 * `out` plugged in pin 11 (`#17`)
 * `-` plugged in pin 9 (`GND`)
 
-### Run and update the code
+### Software
 
-1. Change the `changeit` value in the [common.json](./common.json) file
+Packages to install
+
+```shell
+sudo apt update -y
+sudo apt dist-upgrade -y
+sudo apt autoremove -y
+sudo apt install -y git build-essential fonts-noto-color-emoji python3-tk x11-apps
+```
+
+If you want to use the [gitlab CI pipeline](./.gitlab-ci.yml), also install gitlab runner:
+
+```shell
+curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
+sudo apt -y install gitlab-runner
+gitlab-runner register
+```
+
+## Run and update the code manually
+
+### Run the sensor code
+
+1. Change the values containing `changeit` value in the configurations json files: [common.json](./common.json) and [sensor.json](./sensor.json)
 2. Run the following commands:
 
 ```shell
@@ -42,15 +50,7 @@ source ./vdemo/bin/activate
 ./vdemo/bin/python sensor.py
 ```
 
-## On the screen pi
-
-### First install
-
-```shell
-sudo apt install -y python3-tk x11-apps
-```
-
-### Run and update the code
+### Run the screen code
 
 ```shell
 python3 -m venv ./vdemo
