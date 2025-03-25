@@ -41,7 +41,11 @@ kill_process() {
 start_process() {
     source $VENV_PATH/bin/activate
     $VENV_PATH/bin/pip install -r "${1}.requirements"
-    $VENV_PATH/bin/python "${1}.py" &> "${1}.log" & disown -h
+    if [[ $2 ]]; then
+        sudo -u "${2}" $VENV_PATH/bin/python "${1}.py" &> "${1}.log" & disown -h
+    else
+        $VENV_PATH/bin/python "${1}.py" &> "${1}.log" & disown -h
+    fi
     sleep 2
     cat "${1}.log"
 }

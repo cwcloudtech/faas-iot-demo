@@ -4,5 +4,5 @@ source ./ci/common.sh
 
 kill_process "screen"
 create_venv
-sudo -u cwcloud bash -c "source ./ci/common.sh && start_process screen"
+start_process "screen" "cwcloud"
 exit 0
