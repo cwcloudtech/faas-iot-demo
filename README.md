@@ -8,6 +8,10 @@ This is the flow:
 
 ![flow](./img/flow.png)
 
+The expected output is a TC/TK window opened like this on the raspberrypi each time it receive the answer of the serverless function via MQTT:
+
+![gui](./img/gui.png)
+
 Relevant tutorials:
 * [using CW AI with the FaaS engine](https://www.cwcloud.tech/docs/tutorials/cwai#using-the-faas-engine)
 * [Adding MQTT callbacks in your serverless function](https://www.cwcloud.tech/docs/tutorials/faas/how_to_create_mqtt_hive_mq#step-2-add-an-mqtt-callback-and-create-your-function)
@@ -32,7 +36,7 @@ Note: this wiring is working also when you're using an ArgoOne case which is als
 
 ### Software
 
-Packages to install
+Packages to install:
 
 ```shell
 sudo apt update -y
