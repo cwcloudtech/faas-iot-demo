@@ -3,5 +3,5 @@
     "log_format": "json",
     "api_url": "https://api.cwcloud.tech",
     "api_key": "CWCLOUD_DEMO_api_key_changeit",
-    "function_id": "a2055e9e-bdb6-4292-8275-ac327aef40d4"
+    "function_id": "changeit"
 }
